@@ -1,0 +1,8 @@
+ale_py==0.7.5
+gym==0.21.0
+optuna==2.10.1
+pybullet==3.2.5
+pytest==6.2.4
+stable_baselines3==1.6.0
+torch==1.12.1
+tqdm==4.62.3
