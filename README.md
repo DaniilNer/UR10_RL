@@ -28,13 +28,22 @@ Available rewards:
 
 ## How to run
 Run simple_PPO.py with the following arguments:
+
 --mode in ['train', 'eval', 'viz', 'video'] for mode in which agent will run
+
 --control_mode in ['end_effector, all_joints'] for type of action space
+
 --random_reward - bool that indicate is reward is random every epidode
+
 --reward_type - type of reward, sparce with distance by default
+
 --model_path for weights of NN in eval, video or viz mode.
+
     There is few prerained options in models folder:
+
         end_effector.zip - with EEF action space
+
         all_joints.zip - with all joints action space
+        
 
 
