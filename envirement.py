@@ -19,15 +19,12 @@ REWARDS = {"L1": partial(Lp_reward, p=1),
            } 
 
 class UR10_env(gym.Env):
-    #observation_space = gym.spaces.Box(-np.inf, np.inf, shape=(15,), dtype='float32')
-
-    #action_space = gym.spaces.Box(low=-1, high=1, shape=(3,), dtype=float)
 
     def __init__(self, 
                  mode: str='train', 
                  reward_type: str = "sparce_reward",
                  reward_kwargs: Optional[dict] = None,
-                 control_mode: str = "end_effector", #"end_effector", #"end_effector",
+                 control_mode: str = "end_effector",
                  max_episode_length: Optional[int] = 300,
                  goal_env=True,
                  random_reward=True,
@@ -66,7 +63,6 @@ class UR10_env(gym.Env):
             self.vis = False
         self.client = pybullet.connect(pybullet.GUI if self.vis else pybullet.DIRECT)
         pybullet.setAdditionalSearchPath(pybullet_data.getDataPath())
-        #self.init_ur10()
 
     #def compute_terminated(self, achieved_goal, desired_goal, info):
     #    pass
@@ -144,7 +140,6 @@ class UR10_env(gym.Env):
             }
             if info["controllable"]:
                 self.controllable_joints.append(info["jointID"])
-                #pybullet.setJointMotorControl2(self.ur10, info["jointID"], pybullet.VELOCITY_CONTROL, targetVelocity=0, force=0)
             self.joints.append(info)
             if info['jointName'] == 'flange-tool0':
                 self.end_point = info['jointID']
